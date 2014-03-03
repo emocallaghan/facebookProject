@@ -1,0 +1,41 @@
+Project Overview:
+For this project, our goal is to order a person's facebook friend list from most positive to negative sentiment as well as most subjective to most objective. To do this, we first get all the posts related to each friend. We then filter the posts to only include ones that have been written by the person. Once the posts have been filtered, they're saved into a dictionary with the key as the friend and the value as a string of all the person's statuses concatinated together. These are then ordered both by positivity and subjectivity, then returned to the user.
+
+Implementation:
+	Question: How does your code work? What libraries did you use? How would someone run your code? What data structures(lists, dictionaries) did you use in your program and why?
+	
+	Libraries: Our code makes use of the libraries pattern.web and pattern.__. pattern.web was used to gather our data while pattern.___ was used to analyze oru data. Firstly, pattern.web searches facebook for different relevant feilds, such as news(used to return the posts related to each facebook friend). We then filtered this news through other functions included in the library that provided us with more information about each post. For example, we filtered posts by author, text, and ID. Pattern.___ was then used to get the sentiment and objectivity negative one to positive one.
+
+	Functions: The functions we used are listed below, which each of their inputs and outputs explained. To run our code, a person would run the script, which calls get_posts followed by find_sentiments, find_subjectivity, most_positive_person, most_subjective_person, least_positive_person, and finally least_subjective_person. This allows the user to not only see an order of most to least sentiment and objectivity, but also shows the "winner" of each category.
+	
+	get_posts_string:
+	input: list of all posts related to one friend and the friends name
+	output: only posts authored by the friend returned as one concatinated string
+	get_posts:
+		input: liscence of facebook user
+		output: dictionary with keys as facebook friends and values as strings of concatinated statuses
+	find_sentiments:
+		input: dictionary of friends
+		output: unsorted dictionary of friends with positivity
+	find_subjectivity:
+		input: dictionary of friends
+		output: unsorted dictionary of friends with subjectivy
+	most_positive_person:
+		input: dictionary of friends with positivity
+		output: most positive friend
+	most_subjective_person:
+		input: dictionary of friends with subjectivity
+		output: most subjective friend
+	least_positive_person:
+		input: dictionary of friends with positivity
+		output: least positive friend
+	least_subjective_person:
+		input: dictionary of friends with subjectivity
+		output: least subjective friend
+
+	Data Structures: We only used dictionaries in our code rather than lists. We did so because we wanted to not only create a set of values but also wanted to back out which friend corresponded to each of these values. By using dictionaries, we could easily do so instead of having to use multiple for loops.
+
+Results:
+
+
+Reflection:
