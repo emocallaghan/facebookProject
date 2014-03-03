@@ -100,7 +100,17 @@ def get_cosine(vec1, vec2):
 def text_to_vector(text):
      words = WORD.findall(text)
      return Counter(words)
+     
+def dictionary_to_vectors(dictionary):
+    for key in dictionary:
+        dictionary[key] = text_to_vecotr(dictionary[key])
+    return dictionary
 
+def get_all_cosines(dictionary):
+    workingDictionary = dictionary_to_vectors(dictionary)
+    for key in dictionary:
+        for secondKey in dictionary:
+            
 text1 = 'This is a foo bar sentence .'
 text2 = 'This sentence is similar to a foo bar sentence .'
 
